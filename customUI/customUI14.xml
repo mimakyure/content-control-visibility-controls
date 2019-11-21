@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<customUI onLoad="RibbonControl.Onload" xmlns="http://schemas.microsoft.com/office/2009/07/customui">
+	<ribbon>
+		<tabs>
+			<tab id="cc-tab" label="Content Controls">
+				<group id="cc-bb" label="Building Blocks">
+					<button id="cc-save-qp" label="Save Quick Part" imageMso="SaveSelectionToQuickPartGallery" screentip="Quick Part Gallery" supertip="Save selection to quick part gallery." onAction="RibbonControl.SaveQuickPart" getEnabled="RibbonControl.SaveQuickPartEnabled"/>
+					<button id="cc-add-bbcc" label="Add Content Control" imageMso="ContentControlBuildingBlockGallery" screentip="Building Block Gallery Content Control" supertip="Insert a building block gallery content control." onAction="RibbonControl.AddBuildingBlockContentControl" getEnabled="RibbonControl.AddBuildingBlockContentControlEnabled"/>
+					<button id="cc-show-properties" label="Show Properties" imageMso="ControlProperties" screentip="Control Properties" supertip="View or modify properties for the selected control." onAction="RibbonControl.ShowProperties" getEnabled="RibbonControl.ShowPropertiesEnabled"/>
+				</group>
+				<group id="cc-visibility" label="Visibility">
+					<box id="cc-visibility-select" boxStyle="horizontal">
+						<box id="cc-visibility-properties" boxStyle="vertical">
+							<dropDown id="cc-title-select" tag="Title" label="Title:" screentip="Title Select" supertip="Choose title property to filter content controls by." getItemCount="RibbonControl.GetItemCount" getItemLabel="RibbonControl.GetItemLabel" getSelectedItemIndex="RibbonControl.GetSelectedItemIndex" onAction="RibbonControl.DropDownChange"/>
+							<dropDown id="cc-tag-select" tag="Tag" label="Tag:" screentip="Tag Select" supertip="Choose tag property to filter content controls by." getItemCount="RibbonControl.GetItemCount" getItemLabel="RibbonControl.GetItemLabel" getSelectedItemIndex="RibbonControl.GetSelectedItemIndex" onAction="RibbonControl.DropDownChange"/>
+							<button id="cc-refresh" label="Refresh Property Lists" imageMso="FileWorkflowTasks" onAction="RibbonControl.RefreshPropertyLists"/>
+						</box>
+						<box id="cc-visibility-template" boxStyle="vertical">
+							<dropDown id="cc-gallery-select" tag="Gallery" label="  Gallery:" screentip="Gallery Select" supertip="Choose gallery property to filter content controls by." getItemCount="RibbonControl.GetItemCount" getItemLabel="RibbonControl.GetItemLabel" getSelectedItemIndex="RibbonControl.GetSelectedItemIndex" onAction="RibbonControl.DropDownChange"/>
+							<dropDown id="cc-category-select" tag="Category" label="  Category:" screentip="Category Select" supertip="Choose category property to filter content controls by." getItemCount="RibbonControl.GetItemCount" getItemLabel="RibbonControl.GetItemLabel" getSelectedItemIndex="RibbonControl.GetSelectedItemIndex" onAction="RibbonControl.DropDownChange"/>
+						</box>
+					</box>
+					<separator id="cc-separator1"/>
+					<button id="cc-hide-matching" label="Hide Matching" imageMso="InkStopInkingReadingView" screentip="Hide Maching Content Controls" supertip="Set hidden attribute on text of content controls matching the selected properties." onAction="RibbonControl.HideMatching" getEnabled="RibbonControl.HideShowMatchingEnabled"/>
+					<button id="cc-show-matching" label="Show Matching" imageMso="WebControlCheckBox" screentip="Show Maching Content Controls" supertip="Remove hidden attribute on text of content controls matching the selected properties." onAction="RibbonControl.ShowMatching" getEnabled="RibbonControl.HideShowMatchingEnabled"/>
+					<button id="cc-hide-selection" label="Hide Selection" imageMso="CharacterBorder" screentip="Hide Selected Content Controls" supertip="Set hidden attribute on text of content controls selected in document." onAction="RibbonControl.HideSelection" getEnabled="RibbonControl.HideShowSelectionEnabled"/>
+					<button id="cc-show-selection" label="Show Selection" imageMso="FontDialog" screentip="Show Selected Content Controls" supertip="Remove hidden attribute on text of content controls selected in document." onAction="RibbonControl.ShowSelection" getEnabled="RibbonControl.HideShowSelectionEnabled"/>
+					<button id="cc-hide-all" label="Hide All" imageMso="WebControlHidden" screentip="Hide Content Controls" supertip="Set hidden attribute for text of all content controls in document." onAction="RibbonControl.HideAll"/>
+					<button id="cc-show-all" label="Show All" imageMso="ContentControlText" screentip="Show Content Controls" supertip="Remove hidden attribute for text of all content controls in document." onAction="RibbonControl.ShowAll"/>
+				</group>
+				<group id="cc-appearance" label="Appearance">
+					<button id="cc-appearance-hidden" label="Set Hidden" imageMso="ShapeRectangle" screentip="Appearance Hidden" supertip="Set appearance of all content controls to hidden." onAction="RibbonControl.SetAppearanceHidden"/>
+					<button id="cc-appearance-bb" label="Set Bounding Box" imageMso="WebControlTextBox" screentip="Appearance Bounding Box" supertip="Set appearance of all content controls to bounding box." onAction="RibbonControl.SetAppearanceBoundingBox"/>
+					<button id="cc-appearance-tags" label="Set Tags" imageMso="LabelInsert" screentip="Appearance Tags" supertip="Set appearance of all content controls to tags." onAction="RibbonControl.SetAppearanceTags"/>
+					<toggleButton id="cc-show-formatting" label="Formatting" imageMso="ParagraphMarks" screentip="Show/Hide" supertip="Show paragraph marks and other hidden formatting symbols." onAction="RibbonControl.ToggleShowAll" getPressed="RibbonControl.ShowAllPressed"/>
+					<toggleButton id="cc-show-designmode" label="Design Mode" imageMso="DesignMode" screentip="Design Mode" supertip="Turn on or off design mode." onAction="RibbonControl.ToggleDesignMode" getPressed="RibbonControl.DesignModePressed"/>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
